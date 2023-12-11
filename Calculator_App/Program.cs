@@ -12,9 +12,10 @@ class Calculator
             Console.WriteLine("\nChoose an operation:");
             Console.WriteLine("1. Addition (+)");
             Console.WriteLine("2. Subtraction (-)");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Multiplication (*)");
+            Console.WriteLine("4. Exit");
 
-            Console.Write("Enter your choice (1, 2, or 3): ");
+            Console.Write("Enter your choice (1, 2, 3 or 4): ");
             string choice = Console.ReadLine();
 
             switch (choice)
@@ -26,6 +27,9 @@ class Calculator
                     PerformSubtraction();
                     break;
                 case "3":
+                    PerformMultiplication();
+                    break;
+                case "4":
                     Console.WriteLine("Exiting the calculator. Goodbye!");
                     return;
                 default:
@@ -59,6 +63,19 @@ class Calculator
 
         double result = num1 - num2;
         Console.WriteLine($"Result: {num1} - {num2} = {result}");
+    }
+
+    static void PerformMultiplication()
+    {
+        Console.WriteLine("\nMultiplication");
+        Console.Write("Enter the first number: ");
+        double num1 = GetNumberFromUser();
+
+        Console.Write("Enter the second number: ");
+        double num2 = GetNumberFromUser();
+
+        double result = num1 * num2;
+        Console.WriteLine($"Result: {num1} * {num2} = {result}");
     }
 
     static double GetNumberFromUser()
